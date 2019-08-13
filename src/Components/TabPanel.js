@@ -14,7 +14,7 @@ export default props => {
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      <Box p={3}>{children}</Box>
+      <Box width={1}>{children}</Box>
     </Typography>
   );
 };
