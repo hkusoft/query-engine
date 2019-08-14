@@ -11,6 +11,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
+import SaveIcon from '@material-ui/icons/Save';
+
 
 const useStyles = makeStyles({
   root: {
@@ -39,21 +41,19 @@ export default props => {
   const classes = useStyles();
   return (
       <Paper className={classes.root} width={1}>
-      <IconButton className={classes.iconButton} aria-label="menu">
-        <MenuIcon />
-      </IconButton>
-      <InputBase
-        className={classes.input}
-        placeholder= {props.placeholder}
-        inputProps={{ 'aria-label': 'search google maps' }}
-      />
-      <IconButton className={classes.iconButton} aria-label="search">
-        <SearchIcon />
-      </IconButton>
-      <Divider className={classes.divider} />
-      <IconButton color="primary" className={classes.iconButton} aria-label="directions">
-        <DirectionsIcon />
-      </IconButton>    
+        <MenuIcon />        
+        <InputBase
+          className={classes.input}
+          placeholder= {props.placeholder}
+          inputProps={{ 'aria-label': 'Search' }}
+        />
+        <IconButton className={classes.iconButton} aria-label="search">
+          <SearchIcon />
+        </IconButton>
+        <Divider className={classes.divider} />
+        <IconButton color="primary" className={classes.iconButton} aria-label="directions">        
+        <SaveIcon />    
+        </IconButton>
       </Paper>
   );
 };

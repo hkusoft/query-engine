@@ -4,6 +4,8 @@ import { JsonTree } from "react-editable-json-tree";
 
 import { makeStyles } from "@material-ui/core/styles";
 import SearchBar from "./SearchBar";
+import Breadcrumb from "./Breadcrumb";
+
 
 const useStyles = makeStyles({
   root: {
@@ -53,7 +55,8 @@ export default () => {
     <Box width={0.5}>
       <SearchBar placeholder="Search by json path" />
       <SearchBar placeholder="Search by value" />
-      <Box p={0.5} />
+      <br/>
+      <Breadcrumb />
       <Box bgcolor="#fafafa" padding={2}>
         <JsonTree data={data} style={{ margin: 20 }} />
       </Box>
