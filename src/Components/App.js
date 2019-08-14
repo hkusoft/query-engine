@@ -1,6 +1,5 @@
 import React from "react";
 import SwipeableViews from "react-swipeable-views";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Box from "@material-ui/core/Box";
@@ -8,6 +7,7 @@ import TabPanel from "./TabPanel";
 import LeftPanel from "./LeftPanel";
 import BusinessIcon from "@material-ui/icons/SupervisedUserCircle";
 import CodeIcon from "@material-ui/icons/Code";
+import AddressBar from "./Addressbar";
 
 function a11yProps(index) {
   return {
@@ -16,19 +16,11 @@ function a11yProps(index) {
   };
 }
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: 300
-  }
-}));
-
 export default function App() {
-  const classes = useStyles();
   // const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
-  function handleChange(event, newValue) {
+  function handleChange(newValue) {
     setValue(newValue);
   }
 
@@ -40,7 +32,8 @@ export default function App() {
     spacing: 8
   };
   return (
-    <Box width={1} p="2rem">
+    <Box width={1}>
+      <AddressBar />
       <Tabs
         value={value}
         onChange={handleChange}
@@ -66,7 +59,7 @@ export default function App() {
       <SwipeableViews
         axis={"x"}
         index={value}
-        style= {{marginTop:20}}
+        style={{ marginTop: 20 }}
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
@@ -75,7 +68,6 @@ export default function App() {
         <TabPanel value={value} index={1} dir={theme.direction}>
           Item Two
         </TabPanel>
-        
       </SwipeableViews>
     </Box>
   );
